@@ -58,15 +58,14 @@
 </div>
 
   <script>
-    function moveNo() {
-      const noBtn = document.getElementById("no");
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 100);
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    }
-
-   <script>
+function moveNo() {
+  const noBtn = document.getElementById("no");
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 100);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+  noBtn.style.position = "absolute"; // make sure it’s absolute
+}
 function yesClicked() {
   // Show the meme container
   document.getElementById("meme").style.display = "block";
@@ -74,12 +73,11 @@ function yesClicked() {
   // Show the first meme immediately
   document.getElementById("meme1").style.display = "block";
 
-  // After 2 seconds, show the second meme and a message
+  // Show the second meme and message after 2 seconds
   setTimeout(() => {
     const meme2 = document.getElementById("meme2");
     meme2.style.display = "block";
 
-    // Add a small message below the second meme
     let msg = document.createElement("p");
     msg.textContent = "You got me! ❤️💃🕺";
     msg.style.fontSize = "20px";
